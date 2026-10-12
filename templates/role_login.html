@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ 'Admin Login' if role == 'admin' else 'User Login' }}
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center align-items-center py-4">
+    <div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-4">
+
+        <div class="card shadow-sm"
+             style="border: 1px solid #d5ecde;
+                    border-radius: 18px;
+                    overflow: hidden;">
+
+            <div class="card-body p-4 p-md-5">
+
+                <!-- Heading -->
+                <div class="text-center mb-4">
+
+                    <div style="
+                        width: 76px;
+                        height: 76px;
+                        margin: 0 auto 18px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 22px;
+                        font-size: 36px;
+                        background: {{ '#eaf1fb' if role == 'admin' else '#e5f8eb' }};
+                    ">
+                        {{ '🛡️' if role == 'admin' else '⚡' }}
+                    </div>
+
+                    <h2 class="fw-bold mb-2">
+                        {{ 'Admin Login' if role == 'admin' else 'Welcome back' }}
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        {% if role == 'admin' %}
+                            Sign in to access the administration portal.
+                        {% else %}
+                            Log in to monitor and predict power consumption.
+                        {% endif %}
+                    </p>
+
+                </div>
+
+                <!-- Login form -->
+                <form method="POST">
+
+                    <input type="hidden"
+                           name="csrf_token"
+                           value="{{ csrf_token() }}">
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="username"
+                            required
+                            autofocus>
+                    </div>
+
+                    <!-- Password with Show/Hide button -->
+                    <div class="mb-3">
+
+                        <label for="password" class="form-label fw-semibold">
+                            Password
+                        </label>
+
+                        <div class="input-group">
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                id="togglePassword"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                                title="Show password">
+
+                                <!-- Eye icon -->
+                                <svg
+                                    id="eyeIcon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true">
+
+                                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="btn w-100 py-2 fw-bold"
+                        style="
+                            color: white;
+                            border: none;
+                            border-radius: 10px;
+                            background: {{ 'linear-gradient(110deg, #204f8b, #3478c9)' if role == 'admin' else 'linear-gradient(110deg, #078451, #10b981)' }};
+                        ">
+
+                        Log in as {{ 'Admin' if role == 'admin' else 'User' }}
+
+                    </button>
+
+                </form>
+
+                <!-- Links -->
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('login') }}"
+                       class="text-decoration-none">
+                        ← Back to login selection
+                    </a>
+                </div>
+
+                {% if role == 'user' %}
+                    <div class="text-center mt-3 small">
+                        Don't have an account?
+                        <a href="{{ url_for('register') }}">
+                            Create account
+                        </a>
+                    </div>
+                {% endif %}
+
+                {% if role == 'user' %}
+                    <div class="text-center mt-2 small">
+                        <a href="{{ url_for('reset_request') }}">
+                            Forgot password?
+                        </a>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <!-- Security note -->
+        {% if role == 'admin' %}
+            <p class="text-center text-muted small mt-3">
+                🛡️ Authorized administrators only
+            </p>
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- Show/Hide Password Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const passwordInput = document.getElementById("password");
+    const toggleButton = document.getElementById("togglePassword");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (!passwordInput || !toggleButton || !eyeIcon) {
+        return;
+    }
+
+    toggleButton.addEventListener("click", function () {
+
+        const showPassword = passwordInput.type === "password";
+
+        passwordInput.type = showPassword ? "text" : "password";
+
+        toggleButton.setAttribute(
+            "aria-label",
+            showPassword ? "Hide password" : "Show password"
+        );
+
+        toggleButton.setAttribute(
+            "title",
+            showPassword ? "Hide password" : "Show password"
+        );
+
+        toggleButton.setAttribute(
+            "aria-pressed",
+            showPassword ? "true" : "false"
+        );
+
+        // Change the eye icon when toggled
+        if (showPassword) {
+
+            eyeIcon.innerHTML = `
+                <path d="M3 3l18 18"/>
+                <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+                <path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15 15 0 0 1-4 4.7"/>
+                <path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1.2 0 2.3-.2 3.3-.6"/>
+            `;
+
+        } else {
+
+            eyeIcon.innerHTML = `
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+            `;
+
+        }
+
+    });
+
+});
+</script>
+
+{% endblock %}

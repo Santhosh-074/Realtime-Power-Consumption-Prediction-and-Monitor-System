@@ -1,0 +1,581 @@
+2026-10-12 15:05:27,221 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 15:05:27,222 INFO Press CTRL+C to quit
+2026-10-12 15:05:27,224 INFO  * Restarting with stat
+2026-10-12 15:05:30,654 WARNING  * Debugger is active!
+2026-10-12 15:05:30,659 INFO  * Debugger PIN: 717-904-157
+2026-10-12 15:06:11,705 INFO 127.0.0.1 - - [12/Oct/2026 15:06:11] "GET / HTTP/1.1" 302 -
+2026-10-12 15:06:11,795 INFO 127.0.0.1 - - [12/Oct/2026 15:06:11] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:06:11,919 INFO 127.0.0.1 - - [12/Oct/2026 15:06:11] "GET /static/css/style.css HTTP/1.1" 200 -
+2026-10-12 15:06:12,180 INFO 127.0.0.1 - - [12/Oct/2026 15:06:12] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-12 15:06:18,190 INFO 127.0.0.1 - - [12/Oct/2026 15:06:18] "GET /admin-login HTTP/1.1" 200 -
+2026-10-12 15:06:18,245 INFO 127.0.0.1 - - [12/Oct/2026 15:06:18] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:09:48,652 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 15:09:48,652 INFO Press CTRL+C to quit
+2026-10-12 15:09:48,654 INFO  * Restarting with stat
+2026-10-12 15:09:52,553 WARNING  * Debugger is active!
+2026-10-12 15:09:52,560 INFO  * Debugger PIN: 717-904-157
+2026-10-12 15:09:52,869 INFO 127.0.0.1 - - [12/Oct/2026 15:09:52] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:09:52,974 INFO 127.0.0.1 - - [12/Oct/2026 15:09:52] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:16:00,331 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 15:16:00,332 INFO Press CTRL+C to quit
+2026-10-12 15:16:00,334 INFO  * Restarting with stat
+2026-10-12 15:16:04,191 WARNING  * Debugger is active!
+2026-10-12 15:16:04,198 INFO  * Debugger PIN: 717-904-157
+2026-10-12 15:16:04,307 INFO 127.0.0.1 - - [12/Oct/2026 15:16:04] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:16:04,410 INFO 127.0.0.1 - - [12/Oct/2026 15:16:04] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:16:06,285 INFO 127.0.0.1 - - [12/Oct/2026 15:16:06] "GET /admin-login HTTP/1.1" 200 -
+2026-10-12 15:16:06,332 INFO 127.0.0.1 - - [12/Oct/2026 15:16:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:16:45,794 WARNING rtpcmps@gmail.com | login_failed | portal=admin
+2026-10-12 15:16:45,795 INFO 127.0.0.1 - - [12/Oct/2026 15:16:45] "POST /admin-login HTTP/1.1" 200 -
+2026-10-12 15:16:45,847 INFO 127.0.0.1 - - [12/Oct/2026 15:16:45] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:17:06,075 INFO rtpcmps@gmail.com | login | successful admin login
+2026-10-12 15:17:06,079 INFO 127.0.0.1 - - [12/Oct/2026 15:17:06] "POST /admin-login HTTP/1.1" 302 -
+2026-10-12 15:17:06,183 INFO 127.0.0.1 - - [12/Oct/2026 15:17:06] "GET /admin HTTP/1.1" 200 -
+2026-10-12 15:17:06,228 INFO 127.0.0.1 - - [12/Oct/2026 15:17:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:21:54,977 INFO rtpcmps@gmail.com | logout | 
+2026-10-12 15:21:54,978 INFO 127.0.0.1 - - [12/Oct/2026 15:21:54] "GET /logout HTTP/1.1" 302 -
+2026-10-12 15:21:54,988 INFO 127.0.0.1 - - [12/Oct/2026 15:21:54] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:21:55,040 INFO 127.0.0.1 - - [12/Oct/2026 15:21:55] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:21:56,610 INFO 127.0.0.1 - - [12/Oct/2026 15:21:56] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 15:21:56,658 INFO 127.0.0.1 - - [12/Oct/2026 15:21:56] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:21:59,318 INFO 127.0.0.1 - - [12/Oct/2026 15:21:59] "GET /register HTTP/1.1" 200 -
+2026-10-12 15:21:59,370 INFO 127.0.0.1 - - [12/Oct/2026 15:21:59] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:22:32,347 INFO 127.0.0.1 - - [12/Oct/2026 15:22:32] "POST /register HTTP/1.1" 200 -
+2026-10-12 15:22:32,394 INFO 127.0.0.1 - - [12/Oct/2026 15:22:32] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:22:50,623 INFO kethavathsanthoshnaik07@gmail.com | register
+2026-10-12 15:22:50,624 INFO 127.0.0.1 - - [12/Oct/2026 15:22:50] "POST /register HTTP/1.1" 302 -
+2026-10-12 15:22:50,633 INFO 127.0.0.1 - - [12/Oct/2026 15:22:50] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:22:50,673 INFO 127.0.0.1 - - [12/Oct/2026 15:22:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:22:57,558 INFO 127.0.0.1 - - [12/Oct/2026 15:22:57] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 15:22:57,597 INFO 127.0.0.1 - - [12/Oct/2026 15:22:57] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:05,927 WARNING nayaknaik45@gmail.com | login_failed | portal=user
+2026-10-12 15:23:05,928 INFO 127.0.0.1 - - [12/Oct/2026 15:23:05] "POST /user-login HTTP/1.1" 200 -
+2026-10-12 15:23:05,972 INFO 127.0.0.1 - - [12/Oct/2026 15:23:05] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:17,468 WARNING nayaknaik45@gmail.com | login_failed | portal=user
+2026-10-12 15:23:17,470 INFO 127.0.0.1 - - [12/Oct/2026 15:23:17] "POST /user-login HTTP/1.1" 200 -
+2026-10-12 15:23:17,521 INFO 127.0.0.1 - - [12/Oct/2026 15:23:17] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:27,558 WARNING nayakkethavath45@gmail.com | login_failed | portal=user
+2026-10-12 15:23:27,559 INFO 127.0.0.1 - - [12/Oct/2026 15:23:27] "POST /user-login HTTP/1.1" 200 -
+2026-10-12 15:23:27,612 INFO 127.0.0.1 - - [12/Oct/2026 15:23:27] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:38,012 WARNING nayakkethavath45@gmail.com | login_failed | portal=user
+2026-10-12 15:23:38,014 INFO 127.0.0.1 - - [12/Oct/2026 15:23:38] "POST /user-login HTTP/1.1" 200 -
+2026-10-12 15:23:38,063 INFO 127.0.0.1 - - [12/Oct/2026 15:23:38] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:40,888 INFO 127.0.0.1 - - [12/Oct/2026 15:23:40] "GET /reset HTTP/1.1" 200 -
+2026-10-12 15:23:40,935 INFO 127.0.0.1 - - [12/Oct/2026 15:23:40] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:23:44,891 INFO 127.0.0.1 - - [12/Oct/2026 15:23:44] "POST /reset HTTP/1.1" 302 -
+2026-10-12 15:23:44,904 INFO 127.0.0.1 - - [12/Oct/2026 15:23:44] "GET /reset HTTP/1.1" 200 -
+2026-10-12 15:23:44,953 INFO 127.0.0.1 - - [12/Oct/2026 15:23:44] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:25:15,579 INFO 127.0.0.1 - - [12/Oct/2026 15:25:15] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:25:15,622 INFO 127.0.0.1 - - [12/Oct/2026 15:25:15] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:25:17,559 INFO 127.0.0.1 - - [12/Oct/2026 15:25:17] "GET /register HTTP/1.1" 200 -
+2026-10-12 15:25:17,603 INFO 127.0.0.1 - - [12/Oct/2026 15:25:17] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:25:47,100 INFO kethavathsanthoshnaik7@gmail.com | register
+2026-10-12 15:25:47,102 INFO 127.0.0.1 - - [12/Oct/2026 15:25:47] "POST /register HTTP/1.1" 302 -
+2026-10-12 15:25:47,111 INFO 127.0.0.1 - - [12/Oct/2026 15:25:47] "GET /login HTTP/1.1" 200 -
+2026-10-12 15:25:47,164 INFO 127.0.0.1 - - [12/Oct/2026 15:25:47] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:25:50,221 INFO 127.0.0.1 - - [12/Oct/2026 15:25:50] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 15:25:50,276 INFO 127.0.0.1 - - [12/Oct/2026 15:25:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:25:52,752 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 15:25:52,754 INFO 127.0.0.1 - - [12/Oct/2026 15:25:52] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 15:25:52,794 INFO 127.0.0.1 - - [12/Oct/2026 15:25:52] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 15:25:52,842 INFO 127.0.0.1 - - [12/Oct/2026 15:25:52] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:33:21,437 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 15:33:21,439 INFO Press CTRL+C to quit
+2026-10-12 15:33:21,441 INFO  * Restarting with stat
+2026-10-12 15:33:24,680 WARNING  * Debugger is active!
+2026-10-12 15:33:24,684 INFO  * Debugger PIN: 496-915-730
+2026-10-12 15:34:18,516 INFO 127.0.0.1 - - [12/Oct/2026 15:34:18] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-12 15:34:25,805 INFO 127.0.0.1 - - [12/Oct/2026 15:34:25] "GET / HTTP/1.1" 302 -
+2026-10-12 15:34:25,894 INFO 127.0.0.1 - - [12/Oct/2026 15:34:25] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 15:34:26,012 INFO 127.0.0.1 - - [12/Oct/2026 15:34:26] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:34:45,746 INFO kethavathsanthoshnaik7@gmail.com | dataset_upload | household_power_hourly (8760 rows)
+2026-10-12 15:34:45,749 INFO 127.0.0.1 - - [12/Oct/2026 15:34:45] "POST /upload HTTP/1.1" 302 -
+2026-10-12 15:34:45,796 INFO 127.0.0.1 - - [12/Oct/2026 15:34:45] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 15:34:45,849 INFO 127.0.0.1 - - [12/Oct/2026 15:34:45] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:34:45,888 INFO 127.0.0.1 - - [12/Oct/2026 15:34:45] "GET /static/js/dashboard.js HTTP/1.1" 200 -
+2026-10-12 15:34:46,509 INFO 127.0.0.1 - - [12/Oct/2026 15:34:46] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 15:35:02,171 INFO kethavathsanthoshnaik7@gmail.com | model_trained | household_power_hourly: random_forest, MAE=0.132
+2026-10-12 15:35:02,174 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "POST /datasets/1/train HTTP/1.1" 302 -
+2026-10-12 15:35:02,201 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 15:35:02,251 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:35:02,253 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 15:35:02,299 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 15:35:02,345 INFO 127.0.0.1 - - [12/Oct/2026 15:35:02] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 15:35:23,775 INFO kethavathsanthoshnaik7@gmail.com | prediction_generated | household_power_hourly: 24 steps
+2026-10-12 15:35:23,777 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "POST /datasets/1/predict HTTP/1.1" 302 -
+2026-10-12 15:35:23,814 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 15:35:23,862 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 15:35:23,863 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 15:35:23,895 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 15:35:23,901 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 15:35:23,944 INFO 127.0.0.1 - - [12/Oct/2026 15:35:23] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:14:03,298 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 16:14:03,298 INFO Press CTRL+C to quit
+2026-10-12 16:14:03,300 INFO  * Restarting with stat
+2026-10-12 16:14:05,604 WARNING  * Debugger is active!
+2026-10-12 16:14:05,607 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:15:09,952 INFO 127.0.0.1 - - [12/Oct/2026 16:15:09] "GET / HTTP/1.1" 302 -
+2026-10-12 16:15:09,984 INFO 127.0.0.1 - - [12/Oct/2026 16:15:09] "GET /login HTTP/1.1" 200 -
+2026-10-12 16:15:10,152 INFO 127.0.0.1 - - [12/Oct/2026 16:15:10] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:15:10,295 INFO 127.0.0.1 - - [12/Oct/2026 16:15:10] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-12 16:15:12,948 INFO 127.0.0.1 - - [12/Oct/2026 16:15:12] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 16:15:13,004 INFO 127.0.0.1 - - [12/Oct/2026 16:15:13] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:15:16,222 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 16:15:16,226 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 16:15:16,365 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:15:16,417 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:15:16,419 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:15:16,453 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:15:16,464 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:15:16,535 INFO 127.0.0.1 - - [12/Oct/2026 16:15:16] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:16:26,306 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\services.py', reloading
+2026-10-12 16:16:26,921 INFO  * Restarting with stat
+2026-10-12 16:16:32,061 WARNING  * Debugger is active!
+2026-10-12 16:16:32,067 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:17:45,304 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 16:17:45,305 INFO Press CTRL+C to quit
+2026-10-12 16:17:45,306 INFO  * Restarting with stat
+2026-10-12 16:17:49,691 WARNING  * Debugger is active!
+2026-10-12 16:17:49,695 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:17:49,926 INFO 127.0.0.1 - - [12/Oct/2026 16:17:49] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:17:50,070 INFO 127.0.0.1 - - [12/Oct/2026 16:17:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:17:50,071 INFO 127.0.0.1 - - [12/Oct/2026 16:17:50] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:17:50,119 INFO 127.0.0.1 - - [12/Oct/2026 16:17:50] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:17:50,126 INFO 127.0.0.1 - - [12/Oct/2026 16:17:50] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:17:50,181 INFO 127.0.0.1 - - [12/Oct/2026 16:17:50] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:18:04,687 INFO 127.0.0.1 - - [12/Oct/2026 16:18:04] "GET /reports?dataset=1 HTTP/1.1" 200 -
+2026-10-12 16:18:04,734 INFO 127.0.0.1 - - [12/Oct/2026 16:18:04] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:18:11,404 INFO 127.0.0.1 - - [12/Oct/2026 16:18:11] "GET /reports/1/print?start=&end= HTTP/1.1" 200 -
+2026-10-12 16:18:26,506 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:18:26,553 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:18:26,554 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:18:26,589 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:18:26,596 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:18:26,637 INFO 127.0.0.1 - - [12/Oct/2026 16:18:26] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:24:43,681 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:24:44,294 INFO  * Restarting with stat
+2026-10-12 16:24:49,078 WARNING  * Debugger is active!
+2026-10-12 16:24:49,083 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:24:52,369 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:24:52,954 INFO  * Restarting with stat
+2026-10-12 16:24:57,335 WARNING  * Debugger is active!
+2026-10-12 16:24:57,340 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:24:58,511 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:24:59,097 INFO  * Restarting with stat
+2026-10-12 16:25:03,507 WARNING  * Debugger is active!
+2026-10-12 16:25:03,512 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:25:36,144 INFO kethavathsanthoshnaik7@gmail.com | prediction_generated | household_power_hourly: 24 steps
+2026-10-12 16:25:36,147 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "POST /datasets/1/predict HTTP/1.1" 302 -
+2026-10-12 16:25:36,291 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 16:25:36,446 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:25:36,447 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:25:36,495 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:25:36,503 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:25:36,542 INFO 127.0.0.1 - - [12/Oct/2026 16:25:36] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:26:38,594 INFO kethavathsanthoshnaik7@gmail.com | dataset_upload | household_power_hourly (8760 rows)
+2026-10-12 16:26:38,596 INFO 127.0.0.1 - - [12/Oct/2026 16:26:38] "POST /upload HTTP/1.1" 302 -
+2026-10-12 16:26:38,637 INFO 127.0.0.1 - - [12/Oct/2026 16:26:38] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:26:38,684 INFO 127.0.0.1 - - [12/Oct/2026 16:26:38] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:26:38,685 INFO 127.0.0.1 - - [12/Oct/2026 16:26:38] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:26:38,736 INFO 127.0.0.1 - - [12/Oct/2026 16:26:38] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:26:44,728 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 16:26:44,766 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:26:44,768 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:26:44,801 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:26:44,810 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:26:44,846 INFO 127.0.0.1 - - [12/Oct/2026 16:26:44] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:32:42,330 INFO 127.0.0.1 - - [12/Oct/2026 16:32:42] "GET /reports HTTP/1.1" 500 -
+2026-10-12 16:32:42,442 INFO 127.0.0.1 - - [12/Oct/2026 16:32:42] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-10-12 16:32:42,472 INFO 127.0.0.1 - - [12/Oct/2026 16:32:42] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-10-12 16:32:42,528 INFO 127.0.0.1 - - [12/Oct/2026 16:32:42] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 200 -
+2026-10-12 16:32:42,546 INFO 127.0.0.1 - - [12/Oct/2026 16:32:42] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-10-12 16:32:48,063 INFO 127.0.0.1 - - [12/Oct/2026 16:32:48] "GET /alerts HTTP/1.1" 200 -
+2026-10-12 16:32:48,122 INFO 127.0.0.1 - - [12/Oct/2026 16:32:48] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:32:49,745 INFO 127.0.0.1 - - [12/Oct/2026 16:32:49] "GET /reports HTTP/1.1" 500 -
+2026-10-12 16:32:49,808 INFO 127.0.0.1 - - [12/Oct/2026 16:32:49] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:32:49,810 INFO 127.0.0.1 - - [12/Oct/2026 16:32:49] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:32:49,832 INFO 127.0.0.1 - - [12/Oct/2026 16:32:49] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:32:53,484 INFO 127.0.0.1 - - [12/Oct/2026 16:32:53] "GET /datasets HTTP/1.1" 200 -
+2026-10-12 16:32:53,539 INFO 127.0.0.1 - - [12/Oct/2026 16:32:53] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:32:54,739 INFO 127.0.0.1 - - [12/Oct/2026 16:32:54] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:32:54,803 INFO 127.0.0.1 - - [12/Oct/2026 16:32:54] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:32:54,805 INFO 127.0.0.1 - - [12/Oct/2026 16:32:54] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:32:54,871 INFO 127.0.0.1 - - [12/Oct/2026 16:32:54] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:32:56,441 INFO 127.0.0.1 - - [12/Oct/2026 16:32:56] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:32:56,508 INFO 127.0.0.1 - - [12/Oct/2026 16:32:56] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:32:56,509 INFO 127.0.0.1 - - [12/Oct/2026 16:32:56] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:32:56,525 INFO 127.0.0.1 - - [12/Oct/2026 16:32:56] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:32:59,594 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:32:59,655 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:32:59,656 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:32:59,672 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:32:59,692 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:32:59,980 INFO 127.0.0.1 - - [12/Oct/2026 16:32:59] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:00,034 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:00,036 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:00,046 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:00,063 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:00,207 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:00,263 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:00,264 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:00,272 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:00,291 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:00,629 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:00,680 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:00,681 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:00,691 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:00,722 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:00,950 INFO 127.0.0.1 - - [12/Oct/2026 16:33:00] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:01,018 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:01,019 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:01,035 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:01,056 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:01,404 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:01,467 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:01,468 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:01,477 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:01,502 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:01,819 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:01,887 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:01,888 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:01,898 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:01,918 INFO 127.0.0.1 - - [12/Oct/2026 16:33:01] "GET /reports?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 16:33:06,002 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:33:06,070 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:33:06,071 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:33:06,130 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:33:06,318 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:33:06,372 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:33:06,374 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:33:06,428 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:33:06,471 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:33:06,567 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:33:06,568 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:33:06,621 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:33:06,790 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:33:06,827 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:33:06,827 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:33:06,894 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:33:06,954 INFO 127.0.0.1 - - [12/Oct/2026 16:33:06] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:33:07,075 INFO 127.0.0.1 - - [12/Oct/2026 16:33:07] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:33:07,078 INFO 127.0.0.1 - - [12/Oct/2026 16:33:07] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:33:07,152 INFO 127.0.0.1 - - [12/Oct/2026 16:33:07] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:33:08,927 INFO 127.0.0.1 - - [12/Oct/2026 16:33:08] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:08,976 INFO 127.0.0.1 - - [12/Oct/2026 16:33:08] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:08,978 INFO 127.0.0.1 - - [12/Oct/2026 16:33:08] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:08,989 INFO 127.0.0.1 - - [12/Oct/2026 16:33:08] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:18,990 INFO 127.0.0.1 - - [12/Oct/2026 16:33:18] "GET /reports?dataset=2 HTTP/1.1" 500 -
+2026-10-12 16:33:19,044 INFO 127.0.0.1 - - [12/Oct/2026 16:33:19] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:19,045 INFO 127.0.0.1 - - [12/Oct/2026 16:33:19] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:19,063 INFO 127.0.0.1 - - [12/Oct/2026 16:33:19] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:33:25,714 INFO 127.0.0.1 - - [12/Oct/2026 16:33:25] "GET /reports HTTP/1.1" 500 -
+2026-10-12 16:33:25,774 INFO 127.0.0.1 - - [12/Oct/2026 16:33:25] "GET /reports?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 16:33:25,775 INFO 127.0.0.1 - - [12/Oct/2026 16:33:25] "GET /reports?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 16:33:25,789 INFO 127.0.0.1 - - [12/Oct/2026 16:33:25] "GET /reports?__debugger__=yes&cmd=resource&f=console.png&s=FH3eRNNBxCZeife6NcbO HTTP/1.1" 304 -
+2026-10-12 16:34:04,809 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 16:34:04,809 INFO Press CTRL+C to quit
+2026-10-12 16:34:04,813 INFO  * Restarting with stat
+2026-10-12 16:34:08,896 WARNING  * Debugger is active!
+2026-10-12 16:34:08,902 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:34:15,300 INFO 127.0.0.1 - - [12/Oct/2026 16:34:15] "GET / HTTP/1.1" 302 -
+2026-10-12 16:34:15,465 INFO 127.0.0.1 - - [12/Oct/2026 16:34:15] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:34:15,638 INFO 127.0.0.1 - - [12/Oct/2026 16:34:15] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:15,641 INFO 127.0.0.1 - - [12/Oct/2026 16:34:15] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:34:15,809 INFO 127.0.0.1 - - [12/Oct/2026 16:34:15] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:34:17,873 INFO 127.0.0.1 - - [12/Oct/2026 16:34:17] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:34:17,921 INFO 127.0.0.1 - - [12/Oct/2026 16:34:17] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:34:17,923 INFO 127.0.0.1 - - [12/Oct/2026 16:34:17] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:18,047 INFO 127.0.0.1 - - [12/Oct/2026 16:34:18] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:34:19,696 INFO 127.0.0.1 - - [12/Oct/2026 16:34:19] "GET /reports?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:34:19,758 INFO 127.0.0.1 - - [12/Oct/2026 16:34:19] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:23,368 INFO 127.0.0.1 - - [12/Oct/2026 16:34:23] "GET /reports/2/print?start=&end= HTTP/1.1" 200 -
+2026-10-12 16:34:33,222 INFO 127.0.0.1 - - [12/Oct/2026 16:34:33] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:34:33,282 INFO 127.0.0.1 - - [12/Oct/2026 16:34:33] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:33,283 INFO 127.0.0.1 - - [12/Oct/2026 16:34:33] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:34:33,385 INFO 127.0.0.1 - - [12/Oct/2026 16:34:33] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:34:39,865 INFO kethavathsanthoshnaik7@gmail.com | model_trained | household_power_hourly: random_forest, MAE=0.132
+2026-10-12 16:34:39,868 INFO 127.0.0.1 - - [12/Oct/2026 16:34:39] "POST /datasets/2/train HTTP/1.1" 302 -
+2026-10-12 16:34:39,928 INFO 127.0.0.1 - - [12/Oct/2026 16:34:39] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:34:40,018 INFO 127.0.0.1 - - [12/Oct/2026 16:34:40] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:40,027 INFO 127.0.0.1 - - [12/Oct/2026 16:34:40] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:34:40,059 INFO 127.0.0.1 - - [12/Oct/2026 16:34:40] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 16:34:40,105 INFO 127.0.0.1 - - [12/Oct/2026 16:34:40] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:34:45,542 INFO kethavathsanthoshnaik7@gmail.com | prediction_generated | household_power_hourly: 24 steps
+2026-10-12 16:34:45,545 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "POST /datasets/2/predict HTTP/1.1" 302 -
+2026-10-12 16:34:45,589 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:34:45,632 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:45,634 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:34:45,667 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 16:34:45,673 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 16:34:45,702 INFO 127.0.0.1 - - [12/Oct/2026 16:34:45] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:34:50,580 INFO 127.0.0.1 - - [12/Oct/2026 16:34:50] "GET /reports?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:34:50,639 INFO 127.0.0.1 - - [12/Oct/2026 16:34:50] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:34:56,211 INFO 127.0.0.1 - - [12/Oct/2026 16:34:56] "GET /reports/2/print?start=&end= HTTP/1.1" 200 -
+2026-10-12 16:35:14,903 INFO kethavathsanthoshnaik7@gmail.com | report_downloaded | household_power_hourly
+2026-10-12 16:35:14,916 INFO 127.0.0.1 - - [12/Oct/2026 16:35:14] "GET /reports/2/csv?start=&end= HTTP/1.1" 200 -
+2026-10-12 16:36:58,660 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 16:36:58,711 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:36:58,712 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:36:58,738 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:36:58,746 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:36:58,836 INFO 127.0.0.1 - - [12/Oct/2026 16:36:58] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:39:46,225 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\services.py', reloading
+2026-10-12 16:39:46,894 INFO  * Restarting with stat
+2026-10-12 16:39:51,578 WARNING  * Debugger is active!
+2026-10-12 16:39:51,581 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:39:53,763 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\services.py', reloading
+2026-10-12 16:39:54,337 INFO  * Restarting with stat
+2026-10-12 16:39:58,151 WARNING  * Debugger is active!
+2026-10-12 16:39:58,155 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:39:58,271 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\services.py', reloading
+2026-10-12 16:39:58,811 INFO  * Restarting with stat
+2026-10-12 16:40:02,839 WARNING  * Debugger is active!
+2026-10-12 16:40:02,844 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:41:10,514 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:41:11,034 INFO  * Restarting with stat
+2026-10-12 16:41:15,135 WARNING  * Debugger is active!
+2026-10-12 16:41:15,139 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:42:01,726 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:42:02,274 INFO  * Restarting with stat
+2026-10-12 16:42:07,063 WARNING  * Debugger is active!
+2026-10-12 16:42:07,068 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:46:22,346 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:46:22,933 INFO  * Restarting with stat
+2026-10-12 16:46:27,644 WARNING  * Debugger is active!
+2026-10-12 16:46:27,649 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:46:34,103 INFO  * Detected change in 'C:\\Users\\KETHAVATH SANTHOSH\\OneDrive\\Documents\\5th Sem\\Software Engineering\\Project\\softwere porject\\app.py', reloading
+2026-10-12 16:46:34,612 INFO  * Restarting with stat
+2026-10-12 16:49:53,889 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 16:49:53,889 INFO Press CTRL+C to quit
+2026-10-12 16:49:53,891 INFO  * Restarting with stat
+2026-10-12 16:49:57,421 WARNING  * Debugger is active!
+2026-10-12 16:49:57,428 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:49:58,438 INFO kethavathsanthoshnaik7@gmail.com | logout | 
+2026-10-12 16:49:58,441 INFO 127.0.0.1 - - [12/Oct/2026 16:49:58] "GET /logout HTTP/1.1" 302 -
+2026-10-12 16:49:58,472 INFO 127.0.0.1 - - [12/Oct/2026 16:49:58] "GET /login HTTP/1.1" 200 -
+2026-10-12 16:49:58,611 INFO 127.0.0.1 - - [12/Oct/2026 16:49:58] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:50:51,461 INFO 127.0.0.1 - - [12/Oct/2026 16:50:51] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 16:50:51,527 INFO 127.0.0.1 - - [12/Oct/2026 16:50:51] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:50:54,569 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 16:50:54,572 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 16:50:54,717 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:50:54,794 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:50:54,795 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:50:54,867 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 16:50:54,873 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 16:50:54,934 INFO 127.0.0.1 - - [12/Oct/2026 16:50:54] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:50:58,613 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /dashboard?dataset=1 HTTP/1.1" 200 -
+2026-10-12 16:50:58,661 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:50:58,661 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:50:58,684 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /api/datasets/1/evaluation HTTP/1.1" 200 -
+2026-10-12 16:50:58,694 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /api/datasets/1/prediction HTTP/1.1" 200 -
+2026-10-12 16:50:58,779 INFO 127.0.0.1 - - [12/Oct/2026 16:50:58] "GET /api/datasets/1/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:52:51,229 INFO 127.0.0.1 - - [12/Oct/2026 16:52:51] "GET /alerts HTTP/1.1" 200 -
+2026-10-12 16:52:51,281 INFO 127.0.0.1 - - [12/Oct/2026 16:52:51] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:53:11,468 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 16:53:11,525 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:53:11,527 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 16:53:11,556 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 16:53:11,565 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 16:53:11,593 INFO 127.0.0.1 - - [12/Oct/2026 16:53:11] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 16:53:13,353 INFO 127.0.0.1 - - [12/Oct/2026 16:53:13] "GET /reports?dataset=2 HTTP/1.1" 200 -
+2026-10-12 16:53:13,411 INFO 127.0.0.1 - - [12/Oct/2026 16:53:13] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 16:53:19,537 INFO 127.0.0.1 - - [12/Oct/2026 16:53:19] "GET /reports/2/print?start=&end= HTTP/1.1" 200 -
+2026-10-12 16:59:51,806 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 16:59:51,806 INFO Press CTRL+C to quit
+2026-10-12 16:59:51,808 INFO  * Restarting with stat
+2026-10-12 16:59:55,689 WARNING  * Debugger is active!
+2026-10-12 16:59:55,695 INFO  * Debugger PIN: 496-915-730
+2026-10-12 16:59:55,996 INFO 127.0.0.1 - - [12/Oct/2026 16:59:55] "GET /reports/2/print?start=&end= HTTP/1.1" 200 -
+2026-10-12 17:00:02,929 INFO 127.0.0.1 - - [12/Oct/2026 17:00:02] "GET /reports?dataset=2 HTTP/1.1" 200 -
+2026-10-12 17:00:03,073 INFO 127.0.0.1 - - [12/Oct/2026 17:00:03] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:00:05,495 INFO 127.0.0.1 - - [12/Oct/2026 17:00:05] "GET /dashboard HTTP/1.1" 500 -
+2026-10-12 17:00:05,582 INFO 127.0.0.1 - - [12/Oct/2026 17:00:05] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-10-12 17:00:05,587 INFO 127.0.0.1 - - [12/Oct/2026 17:00:05] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-10-12 17:00:05,640 INFO 127.0.0.1 - - [12/Oct/2026 17:00:05] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=lW84badK8CwhFHnWQVTS HTTP/1.1" 200 -
+2026-10-12 17:00:05,663 INFO 127.0.0.1 - - [12/Oct/2026 17:00:05] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-10-12 17:00:07,670 INFO 127.0.0.1 - - [12/Oct/2026 17:00:07] "GET /dashboard HTTP/1.1" 500 -
+2026-10-12 17:00:07,739 INFO 127.0.0.1 - - [12/Oct/2026 17:00:07] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 17:00:07,740 INFO 127.0.0.1 - - [12/Oct/2026 17:00:07] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 17:00:07,761 INFO 127.0.0.1 - - [12/Oct/2026 17:00:07] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=lW84badK8CwhFHnWQVTS HTTP/1.1" 304 -
+2026-10-12 17:00:07,774 INFO 127.0.0.1 - - [12/Oct/2026 17:00:07] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+2026-10-12 17:00:11,324 INFO 127.0.0.1 - - [12/Oct/2026 17:00:11] "GET / HTTP/1.1" 302 -
+2026-10-12 17:00:11,400 INFO 127.0.0.1 - - [12/Oct/2026 17:00:11] "GET /dashboard HTTP/1.1" 500 -
+2026-10-12 17:00:11,474 INFO 127.0.0.1 - - [12/Oct/2026 17:00:11] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+2026-10-12 17:00:11,476 INFO 127.0.0.1 - - [12/Oct/2026 17:00:11] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+2026-10-12 17:00:11,540 INFO 127.0.0.1 - - [12/Oct/2026 17:00:11] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png&s=lW84badK8CwhFHnWQVTS HTTP/1.1" 304 -
+2026-10-12 17:02:25,151 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 17:02:25,152 INFO Press CTRL+C to quit
+2026-10-12 17:02:25,154 INFO  * Restarting with stat
+2026-10-12 17:02:29,140 WARNING  * Debugger is active!
+2026-10-12 17:02:29,145 INFO  * Debugger PIN: 496-915-730
+2026-10-12 17:02:29,711 INFO 127.0.0.1 - - [12/Oct/2026 17:02:29] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:02:29,864 INFO 127.0.0.1 - - [12/Oct/2026 17:02:29] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:02:29,869 INFO 127.0.0.1 - - [12/Oct/2026 17:02:29] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:02:30,022 INFO 127.0.0.1 - - [12/Oct/2026 17:02:30] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:02:30,031 INFO 127.0.0.1 - - [12/Oct/2026 17:02:30] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:02:30,093 INFO 127.0.0.1 - - [12/Oct/2026 17:02:30] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:02:42,310 INFO kethavathsanthoshnaik7@gmail.com | model_trained | household_power_hourly: gradient_boosting, MAE=0.134
+2026-10-12 17:02:42,313 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "POST /datasets/2/train HTTP/1.1" 302 -
+2026-10-12 17:02:42,404 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 17:02:42,470 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:02:42,473 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:02:42,499 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:02:42,507 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:02:42,544 INFO 127.0.0.1 - - [12/Oct/2026 17:02:42] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:02:46,329 INFO kethavathsanthoshnaik7@gmail.com | prediction_generated | household_power_hourly: 24 steps
+2026-10-12 17:02:46,332 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "POST /datasets/2/predict HTTP/1.1" 302 -
+2026-10-12 17:02:46,378 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 17:02:46,456 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:02:46,463 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:02:46,498 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:02:46,507 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:02:46,544 INFO 127.0.0.1 - - [12/Oct/2026 17:02:46] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:03:59,075 INFO kethavathsanthoshnaik7@gmail.com | prediction_generated | household_power_hourly: 168 steps
+2026-10-12 17:03:59,078 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "POST /datasets/2/predict HTTP/1.1" 302 -
+2026-10-12 17:03:59,127 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /dashboard?dataset=2 HTTP/1.1" 200 -
+2026-10-12 17:03:59,172 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:03:59,174 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:03:59,196 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:03:59,205 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:03:59,242 INFO 127.0.0.1 - - [12/Oct/2026 17:03:59] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:07:09,073 INFO kethavathsanthoshnaik7@gmail.com | logout | 
+2026-10-12 17:07:09,074 INFO 127.0.0.1 - - [12/Oct/2026 17:07:09] "GET /logout HTTP/1.1" 302 -
+2026-10-12 17:07:09,089 INFO 127.0.0.1 - - [12/Oct/2026 17:07:09] "GET /login HTTP/1.1" 200 -
+2026-10-12 17:07:09,137 INFO 127.0.0.1 - - [12/Oct/2026 17:07:09] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:07:10,934 INFO 127.0.0.1 - - [12/Oct/2026 17:07:10] "GET /admin-login HTTP/1.1" 200 -
+2026-10-12 17:07:10,983 INFO 127.0.0.1 - - [12/Oct/2026 17:07:10] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:07:29,853 INFO rtpcmps@gmail.com | login | successful admin login
+2026-10-12 17:07:29,855 INFO 127.0.0.1 - - [12/Oct/2026 17:07:29] "POST /admin-login HTTP/1.1" 302 -
+2026-10-12 17:07:29,905 INFO 127.0.0.1 - - [12/Oct/2026 17:07:29] "GET /admin HTTP/1.1" 200 -
+2026-10-12 17:07:29,971 INFO 127.0.0.1 - - [12/Oct/2026 17:07:29] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:07:48,080 INFO rtpcmps@gmail.com | logout | 
+2026-10-12 17:07:48,081 INFO 127.0.0.1 - - [12/Oct/2026 17:07:48] "GET /logout HTTP/1.1" 302 -
+2026-10-12 17:07:48,089 INFO 127.0.0.1 - - [12/Oct/2026 17:07:48] "GET /login HTTP/1.1" 200 -
+2026-10-12 17:07:48,135 INFO 127.0.0.1 - - [12/Oct/2026 17:07:48] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:07:49,639 INFO 127.0.0.1 - - [12/Oct/2026 17:07:49] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 17:07:49,689 INFO 127.0.0.1 - - [12/Oct/2026 17:07:49] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:11:07,294 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 17:11:07,294 INFO Press CTRL+C to quit
+2026-10-12 17:11:07,296 INFO  * Restarting with stat
+2026-10-12 17:11:10,697 WARNING  * Debugger is active!
+2026-10-12 17:11:10,702 INFO  * Debugger PIN: 496-915-730
+2026-10-12 17:11:11,540 INFO 127.0.0.1 - - [12/Oct/2026 17:11:11] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 17:11:11,650 INFO 127.0.0.1 - - [12/Oct/2026 17:11:11] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:11:17,183 INFO 127.0.0.1 - - [12/Oct/2026 17:11:17] "GET /login HTTP/1.1" 200 -
+2026-10-12 17:11:18,632 INFO 127.0.0.1 - - [12/Oct/2026 17:11:18] "GET /admin-login HTTP/1.1" 200 -
+2026-10-12 17:11:18,672 INFO 127.0.0.1 - - [12/Oct/2026 17:11:18] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:11:37,524 INFO 127.0.0.1 - - [12/Oct/2026 17:11:37] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 17:11:37,568 INFO 127.0.0.1 - - [12/Oct/2026 17:11:37] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:11:41,180 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 17:11:41,184 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 17:11:41,338 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:11:41,415 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:11:41,418 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:11:41,459 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:11:41,472 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:11:41,527 INFO 127.0.0.1 - - [12/Oct/2026 17:11:41] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:16:18,875 INFO 127.0.0.1 - - [12/Oct/2026 17:16:18] "GET /alerts HTTP/1.1" 200 -
+2026-10-12 17:16:18,929 INFO 127.0.0.1 - - [12/Oct/2026 17:16:18] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:16:20,370 INFO 127.0.0.1 - - [12/Oct/2026 17:16:20] "GET /reports HTTP/1.1" 200 -
+2026-10-12 17:16:20,415 INFO 127.0.0.1 - - [12/Oct/2026 17:16:20] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:16:21,697 INFO 127.0.0.1 - - [12/Oct/2026 17:16:21] "GET /datasets HTTP/1.1" 200 -
+2026-10-12 17:16:21,756 INFO 127.0.0.1 - - [12/Oct/2026 17:16:21] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:16:22,688 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:16:22,746 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:16:22,747 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:16:22,778 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:16:22,790 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:16:22,825 INFO 127.0.0.1 - - [12/Oct/2026 17:16:22] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:49:46,694 INFO WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+2026-10-12 17:49:46,695 INFO Press CTRL+C to quit
+2026-10-12 17:49:46,698 INFO  * Restarting with stat
+2026-10-12 17:49:50,057 WARNING  * Debugger is active!
+2026-10-12 17:49:50,072 INFO  * Debugger PIN: 785-754-890
+2026-10-12 17:55:55,831 INFO 127.0.0.1 - - [12/Oct/2026 17:55:55] "GET /dashboard HTTP/1.1" 302 -
+2026-10-12 17:55:55,929 INFO 127.0.0.1 - - [12/Oct/2026 17:55:55] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2026-10-12 17:55:56,065 INFO 127.0.0.1 - - [12/Oct/2026 17:55:56] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:55:56,228 INFO 127.0.0.1 - - [12/Oct/2026 17:55:56] "GET /favicon.ico HTTP/1.1" 404 -
+2026-10-12 17:56:05,029 INFO 127.0.0.1 - - [12/Oct/2026 17:56:05] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 17:56:05,066 INFO 127.0.0.1 - - [12/Oct/2026 17:56:05] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:56:10,085 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 17:56:10,089 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 17:56:10,275 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:56:10,326 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:56:10,358 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:56:10,395 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:56:10,414 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:56:10,476 INFO 127.0.0.1 - - [12/Oct/2026 17:56:10] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:56:30,767 INFO kethavathsanthoshnaik7@gmail.com | dataset_upload_failed | Not enough history: 168 hourly points found, at least 240 are needed to train a model.
+2026-10-12 17:56:30,768 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "POST /upload HTTP/1.1" 302 -
+2026-10-12 17:56:30,812 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:56:30,859 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:56:30,859 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:56:30,880 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:56:30,893 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:56:30,981 INFO 127.0.0.1 - - [12/Oct/2026 17:56:30] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:56:47,058 INFO kethavathsanthoshnaik7@gmail.com | dataset_upload_failed | Not enough history: 24 hourly points found, at least 240 are needed to train a model.
+2026-10-12 17:56:47,059 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "POST /upload HTTP/1.1" 302 -
+2026-10-12 17:56:47,105 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:56:47,147 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:56:47,148 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:56:47,169 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:56:47,178 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:56:47,217 INFO 127.0.0.1 - - [12/Oct/2026 17:56:47] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:58:03,280 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET / HTTP/1.1" 302 -
+2026-10-12 17:58:03,325 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 17:58:03,365 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 17:58:03,367 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 17:58:03,387 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 17:58:03,397 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 17:58:03,446 INFO 127.0.0.1 - - [12/Oct/2026 17:58:03] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 17:58:05,822 INFO kethavathsanthoshnaik7@gmail.com | logout | 
+2026-10-12 17:58:05,823 INFO 127.0.0.1 - - [12/Oct/2026 17:58:05] "GET /logout HTTP/1.1" 302 -
+2026-10-12 17:58:05,832 INFO 127.0.0.1 - - [12/Oct/2026 17:58:05] "GET /login HTTP/1.1" 200 -
+2026-10-12 17:58:05,866 INFO 127.0.0.1 - - [12/Oct/2026 17:58:05] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:02:52,515 INFO 127.0.0.1 - - [12/Oct/2026 18:02:52] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 18:02:52,566 INFO 127.0.0.1 - - [12/Oct/2026 18:02:52] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:36,361 INFO 127.0.0.1 - - [12/Oct/2026 18:05:36] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 18:05:36,417 INFO 127.0.0.1 - - [12/Oct/2026 18:05:36] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:38,863 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 18:05:38,865 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 18:05:38,908 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 18:05:38,957 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:38,960 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "GET /static/js/dashboard.js HTTP/1.1" 304 -
+2026-10-12 18:05:38,990 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "GET /api/datasets/2/evaluation HTTP/1.1" 200 -
+2026-10-12 18:05:38,998 INFO 127.0.0.1 - - [12/Oct/2026 18:05:38] "GET /api/datasets/2/prediction HTTP/1.1" 200 -
+2026-10-12 18:05:39,035 INFO 127.0.0.1 - - [12/Oct/2026 18:05:39] "GET /api/datasets/2/history?start=2025-01-01&end=2025-12-31 HTTP/1.1" 200 -
+2026-10-12 18:05:46,624 INFO 127.0.0.1 - - [12/Oct/2026 18:05:46] "GET /datasets HTTP/1.1" 200 -
+2026-10-12 18:05:46,665 INFO 127.0.0.1 - - [12/Oct/2026 18:05:46] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:49,785 INFO kethavathsanthoshnaik7@gmail.com | dataset_deleted | household_power_hourly
+2026-10-12 18:05:49,786 INFO 127.0.0.1 - - [12/Oct/2026 18:05:49] "POST /datasets/2/delete HTTP/1.1" 302 -
+2026-10-12 18:05:49,797 INFO 127.0.0.1 - - [12/Oct/2026 18:05:49] "GET /datasets HTTP/1.1" 200 -
+2026-10-12 18:05:49,846 INFO 127.0.0.1 - - [12/Oct/2026 18:05:49] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:52,180 INFO kethavathsanthoshnaik7@gmail.com | dataset_deleted | household_power_hourly
+2026-10-12 18:05:52,181 INFO 127.0.0.1 - - [12/Oct/2026 18:05:52] "POST /datasets/1/delete HTTP/1.1" 302 -
+2026-10-12 18:05:52,192 INFO 127.0.0.1 - - [12/Oct/2026 18:05:52] "GET /datasets HTTP/1.1" 200 -
+2026-10-12 18:05:52,248 INFO 127.0.0.1 - - [12/Oct/2026 18:05:52] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:53,710 INFO 127.0.0.1 - - [12/Oct/2026 18:05:53] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 18:05:53,752 INFO 127.0.0.1 - - [12/Oct/2026 18:05:53] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:05:57,260 INFO kethavathsanthoshnaik7@gmail.com | logout | 
+2026-10-12 18:05:57,261 INFO 127.0.0.1 - - [12/Oct/2026 18:05:57] "GET /logout HTTP/1.1" 302 -
+2026-10-12 18:05:57,269 INFO 127.0.0.1 - - [12/Oct/2026 18:05:57] "GET /login HTTP/1.1" 200 -
+2026-10-12 18:05:57,311 INFO 127.0.0.1 - - [12/Oct/2026 18:05:57] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:17:23,064 INFO 127.0.0.1 - - [12/Oct/2026 18:17:23] "GET /user-login HTTP/1.1" 200 -
+2026-10-12 18:17:23,118 INFO 127.0.0.1 - - [12/Oct/2026 18:17:23] "GET /static/css/style.css HTTP/1.1" 304 -
+2026-10-12 18:17:26,074 INFO kethavathsanthoshnaik7@gmail.com | login | successful user login
+2026-10-12 18:17:26,076 INFO 127.0.0.1 - - [12/Oct/2026 18:17:26] "POST /user-login HTTP/1.1" 302 -
+2026-10-12 18:17:26,085 INFO 127.0.0.1 - - [12/Oct/2026 18:17:26] "GET /dashboard HTTP/1.1" 200 -
+2026-10-12 18:17:26,147 INFO 127.0.0.1 - - [12/Oct/2026 18:17:26] "GET /static/css/style.css HTTP/1.1" 304 -

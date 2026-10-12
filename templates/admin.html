@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<h4 class="mb-3">Administrator panel</h4>
+
+<div class="row g-3 mb-3">
+  {% for label, key in [('Users','users'),('Datasets','datasets'),('Trained models','models'),('Alerts','alerts')] %}
+  <div class="col-6 col-md-3">
+    <div class="card stat-card"><div class="card-body">
+      <div class="text-muted small">{{ label }}</div><div class="stat-value">{{ counts[key] }}</div>
+    </div></div>
+  </div>
+  {% endfor %}
+</div>
+
+<ul class="nav nav-tabs mb-3" role="tablist">
+  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tUsers">Users</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tData">Datasets</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tModels">Models</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tLogs">Activity log</button></li>
+</ul>
+
+<div class="tab-content">
+  <!-- Users (manage user accounts) -->
+  <div class="tab-pane fade show active" id="tUsers">
+    <div class="card"><div class="card-body p-0">
+      <table class="table table-sm align-middle mb-0">
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th></th></tr></thead>
+        <tbody>
+        {% for u in users %}
+          <tr>
+            <td>{{ u.id }}</td><td>{{ u.name }}</td><td>{{ u.email }}</td>
+            <td>
+              {% if u.id == current_user.id %}
+                <span class="badge text-bg-warning">{{ u.role }}</span> <span class="small text-muted">(you)</span>
+              {% else %}
+              <form method="post" action="{{ url_for('admin_role', user_id=u.id) }}" class="d-flex gap-1">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <select name="role" class="form-select form-select-sm" style="width:100px">
+                  <option value="user" {{ 'selected' if u.role == 'user' }}>user</option>
+                  <option value="admin" {{ 'selected' if u.role == 'admin' }}>admin</option>
+                </select>
+                <button class="btn btn-sm btn-outline-secondary">Set</button>
+              </form>
+              {% endif %}
+            </td>
+            <td class="small">{{ u.created_at.strftime('%d %b %Y') }}</td>
+            <td class="text-end">
+              {% if u.id != current_user.id %}
+              <form method="post" action="{{ url_for('admin_delete_user', user_id=u.id) }}"
+                    onsubmit="return confirm('Delete this user and all of their datasets?')">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="btn btn-sm btn-outline-danger">Delete</button>
+              </form>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div></div>
+  </div>
+
+  <!-- Datasets -->
+  <div class="tab-pane fade" id="tData">
+    <div class="card"><div class="card-body p-0">
+      <table class="table table-sm align-middle mb-0">
+        <thead><tr><th>Name</th><th>Owner</th><th>Records</th><th>Threshold</th><th>Uploaded</th><th></th></tr></thead>
+        <tbody>
+        {% for d in datasets %}
+          <tr>
+            <td>{{ d.name }}</td><td>{{ d.owner.name }}</td><td>{{ d.rows }}</td>
+            <td>{{ '%.2f'|format(d.effective_threshold(2.0)) }} kW</td>
+            <td class="small">{{ d.uploaded_at.strftime('%d %b %Y %H:%M') }}</td>
+            <td class="text-end text-nowrap">
+              <a class="btn btn-sm btn-outline-primary" href="{{ url_for('dataset_detail', dataset_id=d.id) }}">Manage</a>
+              <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('dashboard', dataset=d.id) }}">Dashboard</a>
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="6" class="text-muted p-3">No datasets yet.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div></div>
+  </div>
+
+  <!-- Models -->
+  <div class="tab-pane fade" id="tModels">
+    <div class="card"><div class="card-body p-0">
+      <table class="table table-sm mb-0">
+        <thead><tr><th>Dataset</th><th>Algorithm</th><th>MAE</th><th>RMSE</th><th>R²</th><th>Trained (UTC)</th></tr></thead>
+        <tbody>
+        {% for m in models %}
+          <tr>
+            <td>{{ m.dataset.name }}</td><td>{{ m.algorithm|replace('_',' ')|title }}</td>
+            <td>{{ '%.3f'|format(m.mae) }}</td><td>{{ '%.3f'|format(m.rmse) }}</td><td>{{ '%.3f'|format(m.r2) }}</td>
+            <td class="small">{{ m.trained_at.strftime('%d %b %Y %H:%M') }}</td>
+          </tr>
+        {% else %}
+          <tr><td colspan="6" class="text-muted p-3">No models trained yet.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div></div>
+  </div>
+
+  <!-- Activity log (audit) -->
+  <div class="tab-pane fade" id="tLogs">
+    <div class="card"><div class="card-body p-0">
+      <table class="table table-sm mb-0">
+        <thead><tr><th>Time (UTC)</th><th>User</th><th>Action</th><th>Detail</th></tr></thead>
+        <tbody>
+        {% for l in logs %}
+          <tr>
+            <td class="small text-nowrap">{{ l.created_at.strftime('%d %b %Y %H:%M:%S') }}</td>
+            <td>{{ l.user_email or '—' }}</td>
+            <td><span class="badge text-bg-{{ 'danger' if 'failed' in l.action else 'secondary' }}">{{ l.action }}</span></td>
+            <td class="small">{{ l.detail }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div></div>
+  </div>
+</div>
+{% endblock %}

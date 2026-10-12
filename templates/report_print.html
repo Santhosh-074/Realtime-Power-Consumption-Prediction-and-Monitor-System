@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Power Consumption Report – {{ ds.name }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>body { padding: 2rem; } @media print { .no-print { display:none; } }</style>
+</head>
+<body>
+<div class="no-print mb-3">
+  <button class="btn btn-primary btn-sm" onclick="window.print()">Print / Save as PDF</button>
+</div>
+<h3>Power Consumption Report</h3>
+<p class="text-muted">
+  Dataset: <strong>{{ ds.name }}</strong> ·
+  Period: {{ start or ds.start_ts.strftime('%Y-%m-%d') }} to {{ end or ds.end_ts.strftime('%Y-%m-%d') }} ·
+  Generated {{ generated.strftime('%d %b %Y %H:%M') }}
+</p>
+
+<h5 class="mt-4">Summary</h5>
+{% if report.stats %}
+<table class="table table-sm w-auto">
+  <tr><th>Records</th><td>{{ report.stats.count }}</td></tr>
+  <tr><th>Average consumption</th><td>{{ '%.3f'|format(report.stats.mean) }} kW</td></tr>
+  <tr><th>Peak consumption</th><td>{{ '%.3f'|format(report.stats.max) }} kW</td></tr>
+  <tr><th>Minimum consumption</th><td>{{ '%.3f'|format(report.stats.min) }} kW</td></tr>
+  <tr><th>Alert threshold</th><td>{{ '%.3f'|format(report.threshold) }} kW</td></tr>
+</table>
+{% else %}<p>No records in this period.</p>{% endif %}
+
+<h5 class="mt-4">Prediction model</h5>
+{% if report.model %}
+<table class="table table-sm w-auto">
+  <tr><th>Algorithm</th><td>{{ report.model.algorithm|replace('_',' ')|title }}</td></tr>
+  <tr><th>MAE</th><td>{{ '%.3f'|format(report.model.mae) }} kW</td></tr>
+  <tr><th>RMSE</th><td>{{ '%.3f'|format(report.model.rmse) }} kW</td></tr>
+  <tr><th>R² score</th><td>{{ '%.3f'|format(report.model.r2) }}</td></tr>
+</table>
+{% else %}<p>No model trained.</p>{% endif %}
+
+<h5 class="mt-4">Predicted consumption</h5>
+{% if report.preds %}
+<table class="table table-sm table-striped w-auto">
+  <thead><tr><th>Time</th><th>Predicted (kW)</th></tr></thead>
+  <tbody>{% for p in report.preds %}<tr><td>{{ p.ts.strftime('%d %b %Y %H:%M') }}</td><td>{{ '%.3f'|format(p.value) }}</td></tr>{% endfor %}</tbody>
+</table>
+{% else %}<p>No predictions generated for this period.</p>{% endif %}
+
+<h5 class="mt-4">Alerts</h5>
+{% if report.alerts %}
+<table class="table table-sm w-auto">
+  <thead><tr><th>Type</th><th>Time</th><th>Value (kW)</th><th>Threshold (kW)</th></tr></thead>
+  <tbody>{% for a in report.alerts %}<tr><td>{{ a.kind }}</td><td>{{ a.ts.strftime('%d %b %Y %H:%M') }}</td><td>{{ '%.2f'|format(a.value) }}</td><td>{{ '%.2f'|format(a.threshold) }}</td></tr>{% endfor %}</tbody>
+</table>
+{% else %}<p>No alerts in this period.</p>{% endif %}
+</body>
+</html>

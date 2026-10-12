@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+{% if not datasets %}
+<div class="card">
+  <div class="card-body empty-hero">
+    <h3>No dataset yet</h3>
+    <p class="text-muted">Upload a CSV of historical power consumption (a time column and a power column) to get started.</p>
+    <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data" class="d-inline-flex gap-2 flex-wrap justify-content-center">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="text" name="name" class="form-control" style="width:220px" placeholder="Dataset name (optional)">
+      <input type="file" name="file" accept=".csv" class="form-control" style="width:280px" required>
+      <button class="btn btn-primary">Upload &amp; validate</button>
+    </form>
+  </div>
+</div>
+{% else %}
+
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+  <form method="get" class="d-flex align-items-center gap-2">
+    <label class="fw-semibold">Dataset</label>
+    <select name="dataset" class="form-select" onchange="this.form.submit()">
+      {% for d in datasets %}
+      <option value="{{ d.id }}" {{ 'selected' if d.id == selected.id }}>{{ d.name }}{% if current_user.is_admin %} · {{ d.owner.name }}{% endif %}</option>
+      {% endfor %}
+    </select>
+  </form>
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('dataset_detail', dataset_id=selected.id) }}">Validation report &amp; settings</a>
+    <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('reports', dataset=selected.id) }}">Reports</a>
+    <button class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#uploadBox">+ Upload dataset</button>
+  </div>
+</div>
+
+<div class="collapse mb-3" id="uploadBox">
+  <div class="card card-body">
+    <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data" class="row g-2">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="col-md-4"><input type="text" name="name" class="form-control" placeholder="Dataset name (optional)"></div>
+      <div class="col-md-5"><input type="file" name="file" accept=".csv" class="form-control" required></div>
+      <div class="col-md-3"><button class="btn btn-primary w-100">Upload &amp; validate</button></div>
+    </form>
+    <div class="form-text mt-2">Accepts any CSV with a date/time column and a power column. The UCI household dataset (semicolon separated, Date + Time columns) also works.</div>
+  </div>
+</div>
+
+<!-- Summary cards (F-014) -->
+<div class="row g-3 mb-3">
+  <div class="col-6 col-lg-3">
+    <div class="card stat-card {{ 'high' if stats.status == 'HIGH' else 'ok' }}"><div class="card-body">
+      <div class="text-muted small">Current consumption</div>
+      <div class="stat-value">{{ '%.2f'|format(stats.current) }} <small class="fs-6">kW</small></div>
+      <div class="small text-muted">{{ stats.current_ts.strftime('%d %b %Y %H:%M') }}
+        <span class="badge text-bg-{{ 'danger' if stats.status == 'HIGH' else 'success' }}">{{ stats.status }}</span></div>
+    </div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card stat-card"><div class="card-body">
+      <div class="text-muted small">Average / Peak</div>
+      <div class="stat-value">{{ '%.2f'|format(stats.mean) }} <small class="fs-6">/ {{ '%.2f'|format(stats.max) }} kW</small></div>
+      <div class="small text-muted">Minimum {{ '%.2f'|format(stats.min) }} kW</div>
+    </div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card stat-card"><div class="card-body">
+      <div class="text-muted small">Alert threshold</div>
+      <div class="stat-value">{{ '%.2f'|format(stats.threshold) }} <small class="fs-6">kW</small></div>
+      <div class="small text-muted">{{ 'Custom' if selected.threshold is not none else 'Automatic (mean + 2σ)' }}</div>
+    </div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="card stat-card {{ 'high' if stats.abnormal else 'ok' }}"><div class="card-body">
+      <div class="text-muted small">Abnormal records</div>
+      <div class="stat-value">{{ stats.abnormal }}</div>
+      <div class="small text-muted">of {{ selected.rows }} {{ 'hourly' if selected.freq == 'h' else 'daily' }} records</div>
+    </div></div>
+  </div>
+</div>
+<!-- Electricity Consumption and Cost Cards -->
+<div class="row g-3 mb-3">
+
+  <!-- Daily Consumption -->
+  <div class="col-6 col-lg-4">
+    <div class="card stat-card">
+      <div class="card-body">
+        <div class="text-muted small">
+          Latest Recorded Day — Consumption
+        </div>
+
+        <div class="stat-value">
+          {{ '%.2f'|format(stats.daily_energy) }}
+          <small class="fs-6">kWh</small>
+        </div>
+
+        <div class="small text-muted">
+          Energy consumed on
+          {{ stats.current_ts.strftime('%d %b %Y') }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Daily Electricity Cost -->
+  <div class="col-6 col-lg-4">
+    <div class="card stat-card">
+      <div class="card-body">
+        <div class="text-muted small">
+          Estimated Daily Cost
+        </div>
+
+        <div class="stat-value">
+          ₹{{ '%.2f'|format(stats.daily_cost) }}
+        </div>
+
+        <div class="small text-muted">
+          At ₹{{ '%.2f'|format(stats.tariff) }}/kWh
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monthly Electricity Cost -->
+  <div class="col-6 col-lg-4">
+    <div class="card stat-card">
+      <div class="card-body">
+        <div class="text-muted small">
+          Estimated Monthly Cost
+        </div>
+
+        <div class="stat-value">
+          ₹{{ '%.2f'|format(stats.monthly_cost) }}
+        </div>
+
+        <div class="small text-muted">
+          Month: {{ stats.current_ts.strftime('%B %Y') }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Historical chart (F-015) -->
+<div class="card mb-3">
+  <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <span>Historical consumption</span>
+    <form id="rangeForm" class="d-flex gap-2 align-items-center small">
+      <input type="date" id="startDate" class="form-control form-control-sm" min="{{ selected.start_ts.strftime('%Y-%m-%d') }}" max="{{ selected.end_ts.strftime('%Y-%m-%d') }}" value="{{ selected.start_ts.strftime('%Y-%m-%d') }}">
+      <span>to</span>
+      <input type="date" id="endDate" class="form-control form-control-sm" min="{{ selected.start_ts.strftime('%Y-%m-%d') }}" max="{{ selected.end_ts.strftime('%Y-%m-%d') }}" value="{{ selected.end_ts.strftime('%Y-%m-%d') }}">
+      <button class="btn btn-sm btn-outline-primary">Apply</button>
+    </form>
+  </div>
+  <div class="card-body">
+    <div class="chart-box"><canvas id="historyChart"></canvas></div>
+    <div class="small text-muted mt-2" id="bucketNote"></div>
+  </div>
+</div>
+
+<div class="row g-3 mb-3">
+  <!-- Model training (F-011, F-013) -->
+  <div class="col-lg-5">
+    <div class="card h-100">
+      <div class="card-header">1. Train prediction model</div>
+      <div class="card-body">
+        <form method="post" action="{{ url_for('train', dataset_id=selected.id) }}" class="d-flex gap-2 mb-3">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <select name="algorithm" class="form-select">
+            {% for key, label in algorithms.items() %}
+            <option value="{{ key }}" {{ 'selected' if model and model.algorithm == key }}>{{ label }}</option>
+            {% endfor %}
+          </select>
+          <button class="btn btn-primary text-nowrap" onclick="this.innerText='Training…'">Train</button>
+        </form>
+        {% if model %}
+        <div class="small text-muted mb-2">Latest model: {{ model.algorithm|replace('_', ' ')|title }} · trained {{ model.trained_at.strftime('%d %b %Y %H:%M') }} UTC · {{ model.train_rows }} train / {{ model.test_rows }} test rows</div>
+        <table class="table table-sm mb-2">
+          <tr><th>MAE</th><td>{{ '%.3f'|format(model.mae) }} kW</td></tr>
+          <tr><th>RMSE</th><td>{{ '%.3f'|format(model.rmse) }} kW</td></tr>
+          <tr><th>R² score</th><td>{{ '%.3f'|format(model.r2) }}</td></tr>
+          <tr><th>Naive baseline MAE</th><td>{{ '%.3f'|format(model.baseline_mae) }} kW <span class="text-muted small">(repeat last value)</span></td></tr>
+        </table>
+        <div class="chart-box small"><canvas id="evalChart"></canvas></div>
+        {% else %}
+        <p class="text-muted mb-0">No model yet. Train one to unlock predictions.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Prediction (F-012, F-016) -->
+  <div class="col-lg-7">
+    <div class="card h-100">
+      <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span>2. Predicted consumption</span>
+        <form method="post" action="{{ url_for('predict', dataset_id=selected.id) }}" class="d-flex gap-2 align-items-center small">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <span>Next</span>
+          <input type="number" name="steps" class="form-control form-control-sm" style="width:80px" min="1" max="{{ max_steps }}" value="{{ default_steps }}">
+          <span>{{ unit_label }}</span>
+          <button class="btn btn-sm btn-primary" {{ 'disabled' if not model }}>Predict</button>
+        </form>
+      </div>
+      <div class="card-body">
+        {% if has_predictions %}
+        <div class="chart-box"><canvas id="predChart"></canvas></div>
+        {% else %}
+        <p class="text-muted mb-0">{{ 'Train a model first, then click Predict.' if not model else 'Click Predict to generate a forecast.' }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Predicted Electricity Consumption and Cost -->
+{% if forecast_summary %}
+<div class="card mb-3">
+  <div class="card-header">
+    <strong>Predicted Electricity Consumption & Cost</strong>
+  </div>
+
+  <div class="card-body">
+
+    <p class="text-muted small">
+      Forecast period:
+      {{ forecast_summary.forecast_start.strftime('%d %b %Y %H:%M') }}
+      to
+      {{ forecast_summary.forecast_end.strftime('%d %b %Y %H:%M') }}
+    </p>
+
+    <div class="row g-3">
+
+      <!-- Predicted consumption -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="text-muted small">
+              Predicted Energy Consumption
+            </div>
+
+            <h3 class="text-success mt-2">
+              {{ '%.2f'|format(forecast_summary.forecast_energy_kwh) }}
+              <small>kWh</small>
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Predicted cost -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="text-muted small">
+              Predicted Electricity Cost
+            </div>
+
+            <h3 class="text-success mt-2">
+              ₹{{ '%.2f'|format(forecast_summary.forecast_cost) }}
+            </h3>
+
+            <small class="text-muted">
+              Tariff: ₹{{ '%.2f'|format(forecast_summary.forecast_tariff) }}/kWh
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forecast interval count -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="text-muted small">
+              Forecast Intervals
+            </div>
+
+            <h3 class="mt-2">
+              {{ forecast_summary.forecast_steps }}
+            </h3>
+
+            <small class="text-muted">
+              {{ 'hourly' if selected.freq == 'h' else 'daily' }} predictions
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Monthly cost breakdown -->
+    {% if forecast_summary.monthly_forecast_costs %}
+    <h6 class="mt-4">Predicted Cost by Month</h6>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>Forecast Month</th>
+            <th>Predicted Consumption (kWh)</th>
+            <th>Estimated Cost (₹)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for month, data in forecast_summary.monthly_forecast_costs.items() %}
+          <tr>
+            <td>{{ month }}</td>
+            <td>{{ '%.2f'|format(data.energy_kwh) }}</td>
+            <td>₹{{ '%.2f'|format(data.cost) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endif %}
+
+<!-- Alerts (F-019..F-021) -->
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <span>Recent alerts</span>
+    <a href="{{ url_for('alerts', dataset=selected.id) }}" class="small">View all</a>
+  </div>
+  <div class="card-body p-0">
+    {% if alerts %}
+    <table class="table table-sm mb-0">
+      <thead><tr><th>Type</th><th>Time</th><th>Value</th><th>Threshold</th><th>Message</th></tr></thead>
+      <tbody>
+      {% for a in alerts %}
+        <tr>
+          <td><span class="badge text-bg-{{ 'danger' if a.kind == 'current' else 'warning' }}">{{ a.kind }}</span></td>
+          <td>{{ a.ts.strftime('%d %b %Y %H:%M') if a.ts }}</td>
+          <td>{{ '%.2f'|format(a.value) }} kW</td>
+          <td>{{ '%.2f'|format(a.threshold) }} kW</td>
+          <td>{{ a.message }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="text-muted p-3 mb-0">No alerts. Consumption is within the threshold.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if selected %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+  window.RTPCPMS = {
+    datasetId: {{ selected.id }},
+    hasModel: {{ 'true' if model else 'false' }},
+    hasPredictions: {{ 'true' if has_predictions else 'false' }}
+  };
+</script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endif %}
+{% endblock %}

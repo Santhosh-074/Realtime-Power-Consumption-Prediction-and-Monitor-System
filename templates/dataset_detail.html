@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}{{ ds.name }}{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h4 class="mb-0">{{ ds.name }}</h4>
+  <div class="d-flex gap-2">
+    <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('datasets') }}">← All datasets</a>
+    <a class="btn btn-primary btn-sm" href="{{ url_for('dashboard', dataset=ds.id) }}">Open dashboard</a>
+  </div>
+</div>
+
+<div class="row g-3">
+  <!-- Validation report (F-006) -->
+  <div class="col-lg-7">
+    <div class="card h-100">
+      <div class="card-header">Dataset validation report</div>
+      <div class="card-body p-0">
+        <table class="table table-sm mb-0">
+          <tr><th style="width:55%">File</th><td>{{ ds.filename }}</td></tr>
+          <tr><th>Time column used</th><td>{{ report.time_column }}</td></tr>
+          <tr><th>Power column used</th><td>{{ report.value_column }}</td></tr>
+          <tr><th>Detected frequency</th><td>{{ report.frequency }}</td></tr>
+          <tr><th>Rows in file</th><td>{{ report.total_rows }}</td></tr>
+          <tr><th>Invalid timestamps (removed)</th><td>{{ report.invalid_timestamps }}</td></tr>
+          <tr><th>Missing / non-numeric values</th><td>{{ report.missing_or_non_numeric_values }}</td></tr>
+          <tr><th>Duplicate timestamps (removed)</th><td>{{ report.duplicate_timestamps }}</td></tr>
+          <tr><th>Negative values (treated as missing)</th><td>{{ report.negative_values }}</td></tr>
+          <tr><th>Gaps filled by interpolation</th><td>{{ report.gaps_filled_by_interpolation }}</td></tr>
+          <tr class="table-light"><th>Clean records stored</th><td>{{ report.rows_after_cleaning }}</td></tr>
+          <tr><th>Period</th><td>{{ report.start }} → {{ report.end }}</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5 d-flex flex-column gap-3">
+    <!-- Settings and threshold (F-019 configuration) -->
+    <div class="card">
+      <div class="card-header">Settings &amp; alert threshold</div>
+      <div class="card-body">
+        <form method="post" action="{{ url_for('dataset_settings', dataset_id=ds.id) }}">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <div class="mb-2">
+            <label class="form-label small mb-1">Name</label>
+            <input name="name" class="form-control form-control-sm" value="{{ ds.name }}">
+          </div>
+          <div class="mb-2">
+            <label class="form-label small mb-1">High-consumption threshold (kW)</label>
+            <input name="threshold" class="form-control form-control-sm" value="{{ ds.threshold if ds.threshold is not none else '' }}"
+                   placeholder="Automatic: {{ '%.2f'|format(auto_threshold) }}">
+            <div class="form-text">Leave empty to use mean + 2σ ({{ '%.2f'|format(auto_threshold) }} kW). Active: {{ '%.2f'|format(effective) }} kW.</div>
+          </div>
+          <button class="btn btn-sm btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Manage dataset (F-007) -->
+    <div class="card">
+      <div class="card-header">Replace or add records</div>
+      <div class="card-body">
+        <form method="post" action="{{ url_for('dataset_update', dataset_id=ds.id) }}" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <input type="file" name="file" accept=".csv" class="form-control form-control-sm mb-2" required>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mode" id="mAppend" value="append" checked>
+            <label class="form-check-label small" for="mAppend">Append new records</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mode" id="mReplace" value="replace">
+            <label class="form-check-label small" for="mReplace">Replace everything</label>
+          </div>
+          <div class="form-text mb-2">Existing models, forecasts and alerts are cleared; train again afterwards.</div>
+          <button class="btn btn-sm btn-primary">Update dataset</button>
+        </form>
+      </div>
+    </div>
+
+    <form method="post" action="{{ url_for('dataset_delete', dataset_id=ds.id) }}"
+          onsubmit="return confirm('Delete this dataset with its models, forecasts and alerts?')">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="btn btn-outline-danger btn-sm">Delete dataset</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
