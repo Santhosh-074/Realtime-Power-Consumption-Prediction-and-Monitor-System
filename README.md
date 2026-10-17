@@ -98,9 +98,24 @@ Mapping to your DFD:
 
 ---
 
-## 5. Honest notes and limits
+## 5. Password reset email setup
 
-- **Prototype, not production.** Password reset shows the reset link on screen because there is no mail server (SRS lists email/SMS alerts as future work). Replace that with an email in production.
+Password reset uses SMTP. Configure these environment variables before starting the app:
+
+```text
+MAIL_SERVER=smtp.example.com
+MAIL_PORT=587
+MAIL_USE_TLS=1
+MAIL_USERNAME=your-smtp-user
+MAIL_PASSWORD=your-smtp-password
+MAIL_DEFAULT_SENDER=your-verified-sender@example.com
+```
+
+For providers that require SSL from connection time, use their SSL port (commonly 465) and set `MAIL_USE_TLS=0`. Use an app password or SMTP credential from your email provider, not your normal account password. If SMTP is not configured or delivery fails, the app logs the failure and does not expose the reset URL on screen.
+
+## 6. Honest notes and limits
+
+- **Prototype, not production.** Use a production mail provider and configure HTTPS plus a real `SECRET_KEY` before deployment.
 - **HTTPS (N-020)** is deployment configuration, not application code: put the app behind HTTPS (for example nginx or a hosting platform) and set `USE_HTTPS=1` so cookies are marked secure. Also set a real `SECRET_KEY`.
 - The default alert threshold is mean + 2 standard deviations; users can set their own per dataset.
 - Prediction is multi-step: each predicted hour feeds the next, so accuracy drops the further ahead you forecast.
@@ -108,7 +123,7 @@ Mapping to your DFD:
 - Units are shown as kW (the UCI dataset uses kW). Other units will still work but the label will say kW.
 - Only a PDF *print view* is provided (browser Save as PDF), not a server-generated PDF.
 
-## 6. Files
+## 7. Files
 
 ```
 app.py              Flask routes, authentication, RBAC, APIs, admin

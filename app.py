@@ -241,12 +241,16 @@ def reset_request():
             user.reset_expires = datetime.utcnow() + timedelta(minutes=30)
             db.session.commit()
             link = url_for("reset_password", token=user.reset_token, _external=True)
-            # Prototype: no mail server, so the link is shown on screen.
-            # In production send this link by email instead (see README).
-            flash(f"Reset link (valid 30 minutes): {link}", "info")
-            logging.info("%s | password_reset_requested", email)
-        else:
-            flash("If that email is registered, a reset link has been generated.", "info")
+            try:
+                services.send_password_reset_email(app, user.email, link)
+                logging.info("%s | password_reset_email_sent", email)
+            except Exception:
+                # Do not leave a usable token behind when delivery failed.
+                user.reset_token = None
+                user.reset_expires = None
+                db.session.commit()
+                logging.exception("%s | password_reset_email_failed", email)
+        flash("If that email is registered, a password reset link will be sent shortly.", "info")
         return redirect(url_for("reset_request"))
     return render_template("reset_request.html")
 

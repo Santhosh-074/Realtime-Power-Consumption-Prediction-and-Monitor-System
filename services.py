@@ -1,13 +1,53 @@
 """Dataset and prediction services used by the Flask routes."""
 import json
 import os
+import smtplib
+import ssl
 import uuid
 from datetime import datetime
+from email.message import EmailMessage
 
 import pandas as pd
 
 import ml
 from models import Alert, Dataset, ModelRecord, Prediction, Reading, db
+
+
+def send_password_reset_email(app, recipient, reset_url):
+    """Send a password reset link using the application's SMTP configuration."""
+    host = app.config.get("MAIL_SERVER")
+    sender = app.config.get("MAIL_DEFAULT_SENDER") or app.config.get("MAIL_USERNAME")
+    if not host or not sender:
+        raise RuntimeError("Password reset email is not configured (MAIL_SERVER and sender are required).")
+
+    message = EmailMessage()
+    message["Subject"] = "Reset your RTPCPMS password"
+    message["From"] = sender
+    message["To"] = recipient
+    message.set_content(
+        "We received a request to reset your RTPCPMS password. "
+        "Use the link below within 30 minutes:\n\n"
+        f"{reset_url}\n\n"
+        "If you did not request this, you can ignore this email."
+    )
+
+    port = app.config.get("MAIL_PORT", 587)
+    username = app.config.get("MAIL_USERNAME")
+    password = app.config.get("MAIL_PASSWORD")
+    timeout = app.config.get("MAIL_TIMEOUT", 15)
+    if app.config.get("MAIL_USE_TLS", True):
+        with smtplib.SMTP(host, port, timeout=timeout) as smtp:
+            smtp.ehlo()
+            smtp.starttls(context=ssl.create_default_context())
+            smtp.ehlo()
+            if username:
+                smtp.login(username, password or "")
+            smtp.send_message(message)
+    else:
+        with smtplib.SMTP_SSL(host, port, timeout=timeout, context=ssl.create_default_context()) as smtp:
+            if username:
+                smtp.login(username, password or "")
+            smtp.send_message(message)
 
 def forecast_cost_summary(dataset, tariff_per_kwh=7.0):
     """Calculate estimated energy consumption and cost from stored forecasts."""

@@ -30,5 +30,13 @@ class Config:
     # Turn on when the app is served over HTTPS (N-020)
     SESSION_COOKIE_SECURE = os.environ.get("USE_HTTPS", "0") == "1"
 
+    # Optional SMTP settings for password reset email.
+    MAIL_SERVER = os.environ.get("MAIL_SERVER", "")
+    MAIL_PORT = int(os.environ.get("MAIL_PORT", "587"))
+    MAIL_USE_TLS = os.environ.get("MAIL_USE_TLS", "1") == "1"
+    MAIL_USERNAME = os.environ.get("MAIL_USERNAME", "")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", "")
+    MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", "")
+
     # Default alert threshold = mean + ALERT_SIGMA * std of the dataset
     ALERT_SIGMA = 2.0
