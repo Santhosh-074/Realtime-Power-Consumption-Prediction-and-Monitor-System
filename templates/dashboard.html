@@ -174,6 +174,9 @@
         </form>
         {% if model %}
         <div class="small text-muted mb-2">Latest model: {{ model.algorithm|replace('_', ' ')|title }} · trained {{ model.trained_at.strftime('%d %b %Y %H:%M') }} UTC · {{ model.train_rows }} train / {{ model.test_rows }} test rows</div>
+        {% if model.algorithm == 'random_forest' %}
+        <a class="btn btn-sm btn-outline-secondary mb-2" href="{{ url_for('download_trees', dataset_id=selected.id) }}">Download up to 100 trees (PDF)</a>
+        {% endif %}
         <table class="table table-sm mb-2">
           <tr><th>MAE</th><td>{{ '%.3f'|format(model.mae) }} kW</td></tr>
           <tr><th>RMSE</th><td>{{ '%.3f'|format(model.rmse) }} kW</td></tr>

@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 
 import pandas as pd
 from flask import (Flask, Response, abort, flash, jsonify, redirect, render_template,
-                   request, session, url_for)
+                   request, send_file, session, url_for)
 from flask_login import (LoginManager, current_user, login_required, login_user,
                          logout_user)
 from flask_wtf.csrf import CSRFProtect
@@ -361,6 +361,42 @@ def train(dataset_id):
     except ml.DatasetError as exc:
         flash(str(exc), "danger")
     return redirect(url_for("dashboard", dataset=ds.id))
+
+
+@app.route("/datasets/<int:dataset_id>/model/trees.pdf")
+@login_required
+def download_trees(dataset_id):
+    """Download up to 100 visualized trees from the dataset's random forest."""
+    ds = get_dataset_or_404(dataset_id)
+    rec = services.latest_model(ds.id)
+    if rec is None:
+        abort(404, description="Train a random forest model first.")
+    if rec.algorithm != "random_forest":
+        abort(400, description="Train a Random Forest model to export its trees.")
+
+    import joblib
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.backends.backend_pdf import PdfPages
+    from sklearn.tree import plot_tree
+
+    bundle = joblib.load(rec.path)
+    forest = bundle["pipeline"].named_steps["model"]
+    feature_names = bundle["columns"]
+    output = io.BytesIO()
+    with PdfPages(output) as pdf:
+        for index, tree in enumerate(forest.estimators_[:100], start=1):
+            fig, ax = plt.subplots(figsize=(24, 16))
+            plot_tree(tree, feature_names=feature_names, filled=True, rounded=True,
+                      fontsize=5, ax=ax)
+            ax.set_title(f"Decision tree {index} of {min(100, len(forest.estimators_))}")
+            fig.tight_layout()
+            pdf.savefig(fig, bbox_inches="tight")
+            plt.close(fig)
+    output.seek(0)
+    return send_file(output, mimetype="application/pdf", as_attachment=True,
+                     download_name=f"dataset_{ds.id}_decision_trees.pdf")
 
 
 @app.route("/datasets/<int:dataset_id>/predict", methods=["POST"])
